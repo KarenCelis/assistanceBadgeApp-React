@@ -1,19 +1,19 @@
 import React from "react";
 
 class BadgeForm extends React.Component {
-  state = {
-    email: "",
-    firstName: "",
-    lastName: "",
-    jobTitle: "",
-    twitter: "",
-  };
-  handleChange = (event) => {
-    //console.log(event.target.name, event.target.value);
-    this.setState({
-      [event.target.name]: event.target.value,
-    });
-  };
+//   state = {
+    // email: "",
+    // firstName: "",
+    // lastName: "",
+    // jobTitle: "",
+    // twitter: "",
+//    };
+  //   handleChange = (event) => {
+  //     //console.log(event.target.name, event.target.value);
+  //     this.setState({
+  //       [event.target.name]: event.target.value,
+  //     });
+  //   };
   handleClick = (event) => {
     // console.log(event.target.name, "button click");
   };
@@ -23,7 +23,7 @@ class BadgeForm extends React.Component {
   };
   render() {
     return (
-      <div style={{ position: "relative", top: "-180px" }}>
+      <div style={{ position: "relative", top: "-150px" }}>
         <h1 style={{ textAlign: "center" }}>New Attendant</h1>
         <form
           className="card p-4"
@@ -33,51 +33,51 @@ class BadgeForm extends React.Component {
           <div className="form-group">
             <label>First Name</label>
             <input
-              onChange={this.handleChange}
+              onChange={this.props.onChange}
               className="form-control"
               type="text"
               name="firstName"
-              value={this.state.firstName}
+              value={this.props.formValues.firstName}
             />
           </div>
           <div className="form-group">
             <label>Last Name</label>
             <input
-              onChange={this.handleChange}
+              onChange={this.props.onChange}
               className="form-control"
               type="text"
               name="lastName"
-              value={this.state.lastName}
+              value={this.props.formValues.lastName}
             />
           </div>
           <div className="form-group">
             <label>Email</label>
             <input
-              onChange={this.handleChange}
+              onChange={this.props.onChange}
               className="form-control"
               type="email"
               name="email"
-              value={this.state.email}
+              value={this.props.formValues.email}
             />
           </div>
           <div className="form-group">
             <label>Job Title</label>
             <input
-              onChange={this.handleChange}
+              onChange={this.props.onChange}
               className="form-control"
               type="text"
               name="jobTitle"
-              value={this.state.jobTitle}
+              value={this.props.formValues.jobTitle}
             />
           </div>
           <div className="form-group">
             <label>Twitter</label>
             <input
-              onChange={this.handleChange}
+              onChange={this.props.onChange}
               className="form-control"
               type="text"
               name="twitter"
-              value={this.state.twitter}
+              value={this.props.formValues.twitter}
             />
           </div>
           <button onClick={this.handleClick} className="btn btn-primary">
