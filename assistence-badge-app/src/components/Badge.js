@@ -19,10 +19,10 @@ class Badge extends React.Component {
         </div>
 
         <div className="Badge__section-info">
-          <p>Estudiante de Biologia</p>
-          <p>@soyEco</p>
+          <h3>Estudiante de Biologia</h3>
+          <div>@soyEco</div>
         </div>
-        <div className="Badge__footer">#saveearth</div>
+        <div className="Badge__footer">#savearth</div>
       </div>
     );
   }
