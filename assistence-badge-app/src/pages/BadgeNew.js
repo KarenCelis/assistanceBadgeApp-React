@@ -2,7 +2,8 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import confLog from "../images/el-planeta-tierra.svg";
 import "./styles/BadgeNew.css";
-import Badge from '../components/Badge';
+import Badge from "../components/Badge";
+import BadgeForm from "../components/BadgeForm";
 class BadgeNew extends React.Component {
   render() {
     return (
@@ -19,7 +20,7 @@ class BadgeNew extends React.Component {
         </div>
         <div className="container"></div>
         <div className="row">
-          <div className="col">
+          <div className="col-6">
             <Badge
               avatarUrl="https://avatars.githubusercontent.com/u/47069950?v=4"
               name="Lucia"
@@ -27,6 +28,9 @@ class BadgeNew extends React.Component {
               jobTitle="Biologa"
               twitter="soyEcoFriend"
             ></Badge>
+          </div>
+          <div className="col-6">
+            <BadgeForm />
           </div>
         </div>
       </div>
