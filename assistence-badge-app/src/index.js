@@ -10,12 +10,12 @@ const container = document.getElementById('app');
 //const name = 'antuCC';
 //const element = React.createElement('h1', {}, `Hola, soy ${name}`)
 //const jxs = <h1> Hola soy, {name}</h1>
-const jxs = <div>
-    Hellooooo hellooiii
-    <p>
-        im engine
-    </p>
-</div>
+// const jxs = <div>
+//     Hellooooo hellooiii
+//     <p>
+//         im engine
+//     </p>
+// </div>
 ReactDOM.render(
-    <Badge/>, container
+    <Badge avatarUrl="https://avatars.githubusercontent.com/u/47069950?v=4" name="Lucia" lastName="Ruiz" jobTitle="Biologa" twitter="@soyEcoFriend"/>, container
 );
