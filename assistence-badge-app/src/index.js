@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-
+import Badge from './components/Badge';
+import 'bootstrap/dist/css/bootstrap.css';
 
 const container = document.getElementById('app');
 //const jsx = <h1> Hellowwwwwwwwwwww, fdg</h1>
@@ -17,5 +17,5 @@ const jxs = <div>
     </p>
 </div>
 ReactDOM.render(
-    jxs, container
+    <Badge/>, container
 );
