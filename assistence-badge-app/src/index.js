@@ -4,7 +4,18 @@ import ReactDOM from 'react-dom';
 
 
 const container = document.getElementById('app');
-const element = <h1> Hellowwwwwwwwwwww, fdg</h1>
+//const jsx = <h1> Hellowwwwwwwwwwww, fdg</h1>
+//const sum = () => 3+3;
+//const element = React.createElement('h1', {}, 'hellooiii')
+//const name = 'antuCC';
+//const element = React.createElement('h1', {}, `Hola, soy ${name}`)
+//const jxs = <h1> Hola soy, {name}</h1>
+const jxs = <div>
+    Hellooooo hellooiii
+    <p>
+        im engine
+    </p>
+</div>
 ReactDOM.render(
-    element, container
+    jxs, container
 );
