@@ -14,7 +14,7 @@ class BadgestList extends React.Component {
                   alt=""
                 />
                 <div>
-                  <div>
+                  <div className="fw-bold">
                     {badge.firstName} {badge.lastName}
                   </div>
                   <div><i className="bi bi-twitter BadgesIcon"></i> <span>@{badge.twitter} </span></div>
