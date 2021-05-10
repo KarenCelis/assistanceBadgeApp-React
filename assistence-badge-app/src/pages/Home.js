@@ -14,7 +14,7 @@ export default class Home extends Component {
             <div className="Home__col col-12 col-md-4">
               <img
                 src={confLog}
-                alt="Platzi Conf Logo"
+                alt="Conf Logo"
                 className="img-fluid mb-2"
               />
 
@@ -27,7 +27,7 @@ export default class Home extends Component {
             <div className="Home__col d-none d-md-block col-md-8">
               <img
                 src={handImage}
-                alt="Astronauts"
+                alt="Girl"
                 className="img-fluid p-4"
               />
             </div>
