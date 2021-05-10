@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 import confLog from "../images/el-planeta-tierra.svg";
 import "./styles/BadgeNew.css";
 import Badge from "../components/Badge";
@@ -26,8 +25,8 @@ class BadgeNew extends React.Component {
   };
   render() {
     return (
-      <div>
-        <Navbar />
+      <React.Fragment>
+
         <div className="BadgeNew__hero">
           <img
             className=""
@@ -57,7 +56,7 @@ class BadgeNew extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }

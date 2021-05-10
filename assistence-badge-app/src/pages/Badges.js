@@ -1,5 +1,4 @@
 import React from "react";
-import NavBar from "../components/Navbar";
 import BadgestList from "../components/BadgestList";
 import confLog from "../images/el-planeta-tierra.svg";
 import {Link} from 'react-router-dom'
@@ -41,8 +40,8 @@ class Badges extends React.Component {
   };
   render() {
     return (
-      <div>
-        <NavBar />
+      <React.Fragment>
+
         <div className="Badges">
           <div className="Badges__hero">
             <div className="Badges__container">
@@ -64,7 +63,7 @@ class Badges extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }

@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+//rutas
 import App from './components/App'
+
+//css
 import 'bootstrap/dist/css/bootstrap.css';
 import './global.css'
 import '../node_modules/bootstrap-icons/font/bootstrap-icons.css'
