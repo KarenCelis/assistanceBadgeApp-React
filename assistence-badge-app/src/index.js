@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import BadgeNew from './pages/BadgeNew';
 import Badges from './pages/Badges';
 import 'bootstrap/dist/css/bootstrap.css';
 import './global.css'
+import '../node_modules/bootstrap-icons/font/bootstrap-icons.css'
 const container = document.getElementById('app');
 //const jsx = <h1> Hellowwwwwwwwwwww, fdg</h1>
 //const sum = () => 3+3;
