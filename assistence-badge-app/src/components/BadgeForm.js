@@ -26,7 +26,7 @@ class BadgeForm extends React.Component {
   render() {
     return (
       <div style={{ position: "relative" }}>
-        <h1 style={{ textAlign: "center" }}>New Attendant</h1>
+
         <form
           className="card p-4"
           style={{ gap: "20px" }}
@@ -40,6 +40,7 @@ class BadgeForm extends React.Component {
               type="text"
               name="firstName"
               value={this.props.formValues.firstName}
+              required
             />
           </div>
           <div className="form-group">
@@ -50,6 +51,7 @@ class BadgeForm extends React.Component {
               type="text"
               name="lastName"
               value={this.props.formValues.lastName}
+           required
             />
           </div>
           <div className="form-group">
@@ -60,6 +62,7 @@ class BadgeForm extends React.Component {
               type="email"
               name="email"
               value={this.props.formValues.email}
+              required
             />
           </div>
           <div className="form-group">
@@ -70,6 +73,7 @@ class BadgeForm extends React.Component {
               type="text"
               name="jobTitle"
               value={this.props.formValues.jobTitle}
+              required
             />
           </div>
           <div className="form-group">
@@ -80,6 +84,7 @@ class BadgeForm extends React.Component {
               type="text"
               name="twitter"
               value={this.props.formValues.twitter}
+              required
             />
           </div>
           <button onClick={this.handleClick} className="btn btn-primary">

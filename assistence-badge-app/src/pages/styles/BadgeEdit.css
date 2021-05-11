@@ -1,0 +1,11 @@
+.BadgeEdit__hero {
+    width: 100%;
+    padding: 2rem 1rem;
+    background: url("../../images/banner-tree.jpg"), #1b1b25;
+    background-repeat: repeat;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+}

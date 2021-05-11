@@ -1,13 +1,13 @@
 import React from "react";
 import confLog from "../images/girls.svg";
-import "./styles/BadgeNew.css";
+import "./styles/BadgeEdit.css";
 import Badge from "../components/Badge";
 import BadgeForm from "../components/BadgeForm";
 import api from "../api";
 import PageLoading from "../pages/PageLoading"
-class BadgeNew extends React.Component {
+class BadgeEdit extends React.Component {
   state = {
-    loading : false,
+    loading : true,
     error : null,
     form: {
       email: "",
@@ -27,16 +27,33 @@ class BadgeNew extends React.Component {
       },
     });
   };
-//Peticion post
+
+  //peticion de la data
+  componentDidMount(){
+      this.fetchData()
+  }
+  fetchData = async (event) => {
+      this.setState({loading : true, error :null})
+      try{
+          const data = await api.badges.read(
+              this.props.match.params.badgeId
+          )
+
+          this.setState({loading : false, form: data})
+      } catch(error){
+        this.setState({loading : false, error: error})
+      }
+
+  }
+//Peticion update
   handleSubmit = async (event) => {
     event.preventDefault();
     this.setState({loading: true, error : null})
 
     try {
       //momento exacto
-      await api.badges.create(this.state.form);
+      await api.badges.update(this.props.match.params.badgeId,this.state.form);
       this.setState({loading: false})
-
       this.props.history.push('/badges')
     } catch (error) {
       this.setState({loading: false, error : error})
@@ -50,7 +67,7 @@ class BadgeNew extends React.Component {
     }
     return (
       <React.Fragment>
-        <div className="BadgeNew__hero">
+        <div className="BadgeEdit__hero">
           <img
             className=""
             src={confLog}
@@ -73,7 +90,7 @@ class BadgeNew extends React.Component {
               ></Badge>
             </div>
             <div className="col-6">
-            <h1 style={{ textAlign: "center" }}>New Attendant</h1>
+            <h1 style={{ textAlign: "center" }}>Edit Attendant</h1>
               <BadgeForm
                 onChange={this.handleChange}
                 onSubmit={this.handleSubmit}
@@ -88,4 +105,4 @@ class BadgeNew extends React.Component {
   }
 }
 
-export default BadgeNew;
+export default BadgeEdit;
