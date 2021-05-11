@@ -4,8 +4,9 @@ import confLog from "../images/el-planeta-tierra.svg";
 import api from "../api";
 import { Link } from "react-router-dom";
 import "./styles/Badges.css";
-import PageLoading from '../pages/PageLoading';
-import PageError from '../pages/PageError';
+import PageLoading from "../pages/PageLoading";
+import PageError from "../pages/PageError";
+import MiniLoader from "../components/MiniLoader";
 class Badges extends React.Component {
   constructor(props) {
     super(props);
@@ -20,8 +21,16 @@ class Badges extends React.Component {
 
   componentDidMount() {
     this.fetchData();
+
+    //metodo polling es un bug si no se cancela en el will unmount
+    this.intervalId = setInterval(this.fetchData, 5000);
   }
-//peticion get
+
+  componentWillUnmount() {
+    //se cancela asi enviando el id
+    clearInterval(this.intervalId)
+  }
+  //peticion get
   fetchData = async () => {
     this.setState({ loading: true, error: null });
 
@@ -85,12 +94,16 @@ class Badges extends React.Component {
     clearTimeout( this.timeoutId)
   }*/
   render() {
-    if (this.state.loading === true) {
+
+
+    //manejo de estados
+    if (this.state.loading === true && !this.state.data) {
       return <PageLoading></PageLoading>;
     }
     if (this.state.error) {
-      return <PageError error = {this.state.error}></PageError>
+      return <PageError error={this.state.error}></PageError>;
     }
+    //renderizacion
     console.log("2. Render");
     return (
       <React.Fragment>
@@ -110,8 +123,11 @@ class Badges extends React.Component {
           <div className="Badges__list">
             <div className="Badges__container">
               <BadgestList badges={this.state.data}></BadgestList>
+
             </div>
+            {this.state.loading && <MiniLoader></MiniLoader>}
           </div>
+
         </div>
       </React.Fragment>
     );
