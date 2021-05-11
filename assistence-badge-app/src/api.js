@@ -29,10 +29,11 @@ const api = {
       return callApi("/badges");
     },
     create(badge) {
-      return callApi(`/badges`, {
+      //throw new Error('Not found')
+       return callApi(`/badges`, {
         method: "POST",
-        body: JSON.stringify(badge),
-      });
+         body: JSON.stringify(badge),
+       });
     },
     read(badgeId) {
       return callApi(`/badges/${badgeId}`);

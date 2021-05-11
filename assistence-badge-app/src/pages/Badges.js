@@ -21,11 +21,12 @@ class Badges extends React.Component {
   componentDidMount() {
     this.fetchData();
   }
-
+//peticion get
   fetchData = async () => {
     this.setState({ loading: true, error: null });
 
     try {
+      //momento exacto get
       const data = await api.badges.list();
       this.setState({ loading: false, data: data });
     } catch (error) {

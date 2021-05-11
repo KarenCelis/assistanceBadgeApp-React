@@ -1,13 +1,13 @@
 import React from "react";
 
 class BadgeForm extends React.Component {
-//   state = {
-    // email: "",
-    // firstName: "",
-    // lastName: "",
-    // jobTitle: "",
-    // twitter: "",
-//    };
+  //   state = {
+  // email: "",
+  // firstName: "",
+  // lastName: "",
+  // jobTitle: "",
+  // twitter: "",
+  //    };
   //   handleChange = (event) => {
   //     //console.log(event.target.name, event.target.value);
   //     this.setState({
@@ -15,15 +15,17 @@ class BadgeForm extends React.Component {
   //     });
   //   };
   handleClick = (event) => {
+
     // console.log(event.target.name, "button click");
   };
   // handleSubmit = (event) => {
   //   event.preventDefault();
   //   console.log(this.state);
   // };
+
   render() {
     return (
-      <div style={{ position: "relative"}}>
+      <div style={{ position: "relative" }}>
         <h1 style={{ textAlign: "center" }}>New Attendant</h1>
         <form
           className="card p-4"
@@ -83,6 +85,10 @@ class BadgeForm extends React.Component {
           <button onClick={this.handleClick} className="btn btn-primary">
             SAVE
           </button>
+
+          {this.props.error && (
+            <p className="text-danger">{this.props.error.message}</p>
+          )}
         </form>
       </div>
     );
