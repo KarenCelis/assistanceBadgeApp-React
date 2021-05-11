@@ -1,8 +1,9 @@
 import React from "react";
-import confLog from "../images/el-planeta-tierra.svg";
+import confLog from "../images/girls.svg";
 import "./styles/BadgeNew.css";
 import Badge from "../components/Badge";
 import BadgeForm from "../components/BadgeForm";
+import api from "../api";
 class BadgeNew extends React.Component {
   state = {
     form: {
@@ -23,10 +24,21 @@ class BadgeNew extends React.Component {
       },
     });
   };
+
+  handleSubmit = async (event) => {
+    event.preventDefault();
+    this.setState({loading: true, error : null})
+
+    try {
+      await api.badges.create(this.state.form);
+      this.setState({loading: false})
+    } catch (error) {
+      this.setState({loading: false, error : error})
+    }
+  };
   render() {
     return (
       <React.Fragment>
-
         <div className="BadgeNew__hero">
           <img
             className=""
@@ -41,16 +53,17 @@ class BadgeNew extends React.Component {
             <div className="col-6">
               <Badge
                 avatarUrl="https://avatars.githubusercontent.com/u/47069950?v=4"
-                name={this.state.form.firstName}
-                lastName={this.state.form.lastName}
-                jobTitle={this.state.form.jobTitle}
+                name={this.state.form.firstName || "FIRST_NAME"}
+                lastName={this.state.form.lastName || "LAST_NAME"}
+                jobTitle={this.state.form.jobTitle || "JOB_TITLE"}
                 email={this.state.form.email}
-                twitter={this.state.form.twitter}
+                twitter={this.state.form.twitter || "TWITTER"}
               ></Badge>
             </div>
             <div className="col-6">
               <BadgeForm
                 onChange={this.handleChange}
+                onSubmit={this.handleSubmit}
                 formValues={this.state.form}
               />
             </div>

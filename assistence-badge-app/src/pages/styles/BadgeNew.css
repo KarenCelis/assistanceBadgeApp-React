@@ -6,4 +6,6 @@
     margin-bottom: 1rem;
     color: #ffffff;
     height: 200px;
+    display: flex;
+    justify-content: center;
 }

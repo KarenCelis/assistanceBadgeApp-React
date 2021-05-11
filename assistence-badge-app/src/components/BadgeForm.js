@@ -17,18 +17,18 @@ class BadgeForm extends React.Component {
   handleClick = (event) => {
     // console.log(event.target.name, "button click");
   };
-  handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(this.state);
-  };
+  // handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   console.log(this.state);
+  // };
   render() {
     return (
-      <div style={{ position: "relative", top: "-150px" }}>
+      <div style={{ position: "relative"}}>
         <h1 style={{ textAlign: "center" }}>New Attendant</h1>
         <form
           className="card p-4"
           style={{ gap: "20px" }}
-          onSubmit={this.handleSubmit}
+          onSubmit={this.props.onSubmit}
         >
           <div className="form-group">
             <label>First Name</label>
