@@ -1,18 +1,36 @@
 import React from "react";
 import BadgestList from "../components/BadgestList";
 import confLog from "../images/el-planeta-tierra.svg";
-
+import api from "../api";
 import { Link } from "react-router-dom";
 import "./styles/Badges.css";
 class Badges extends React.Component {
   constructor(props) {
     super(props);
     console.log("1. constructor()");
-
-    this.state = {
-      data: [],
-    };
   }
+
+  state = {
+    loading: true,
+    error: null,
+    data: undefined,
+  };
+
+  componentDidMount() {
+    this.fetchData();
+  }
+
+  fetchData = async () => {
+    this.setState({ loading: true, error: null });
+
+    try {
+      const data = await api.badges.list();
+      this.setState({ loading: false, data: data });
+    } catch (error) {
+      this.setState({ loading: false, error: error });
+    }
+  };
+  /*
   componentDidMount() {
     console.log("3. componentDidMount()");
 
@@ -62,8 +80,14 @@ class Badges extends React.Component {
   componentWillUnmount(){
     console.log('6. component WillMount');
     clearTimeout( this.timeoutId)
-  }
+  }*/
   render() {
+    if (this.state.loading === true) {
+      return "Loading ...";
+    }
+    if (this.state.error) {
+      return `Error: ${this.state.error.message}`;
+    }
     console.log("2. Render");
     return (
       <React.Fragment>
