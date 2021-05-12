@@ -1,4 +1,5 @@
 import React from "react";
+import ReactDOM from "react-dom"
 import Badge from "../components/Badge";
 import confLog from "../images/girls.svg";
 import { Link } from "react-router-dom";
@@ -49,7 +50,11 @@ function BadgeDetails(props) {
               </Link>
             </div>
             <div>
-              <button className="btn btn-danger">Delete</button>
+              <button className="btn btn-danger">
+                Delete
+              </button>
+              {/* {ReactDOM.createPortal(que , donde)} */}
+              {ReactDOM.createPortal(<h1>helllo</h1>, document.getElementById('modal'))}
             </div>
           </div>
         </div>
