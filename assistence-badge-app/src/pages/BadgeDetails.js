@@ -1,8 +1,8 @@
 import React from "react";
-import ReactDOM from "react-dom"
 import Badge from "../components/Badge";
 import confLog from "../images/girls.svg";
 import { Link } from "react-router-dom";
+import DeleteBadgeModal from "../components/DeleteBadgeModal";
 function BadgeDetails(props) {
   const badge = props.badge;
   return (
@@ -50,11 +50,15 @@ function BadgeDetails(props) {
               </Link>
             </div>
             <div>
-              <button className="btn btn-danger">
+              <button onClick={props.onOpenModal} className="btn btn-danger">
                 Delete
               </button>
-              {/* {ReactDOM.createPortal(que , donde)} */}
-              {ReactDOM.createPortal(<h1>helllo</h1>, document.getElementById('modal'))}
+
+              <DeleteBadgeModal
+                isOpen={props.modalIsOpen}
+                onClose={props.onCloseModal}
+                onDeleteBadge = {props.onDeleteBadge}
+              ></DeleteBadgeModal>
             </div>
           </div>
         </div>
