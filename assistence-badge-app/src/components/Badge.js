@@ -1,6 +1,5 @@
 import React from "react";
 import confLog from "../images/el-planeta-tierra.svg";
-import imgAvatar from "../images/girl.svg";
 import "./styles/Badge.css";
 import Gravatar from "./Gravatar";
 class Badge extends React.Component {

@@ -4,8 +4,8 @@ import confLog from "../images/el-planeta-tierra.svg";
 import api from "../api";
 import { Link } from "react-router-dom";
 import "./styles/Badges.css";
-import PageLoading from "../pages/PageLoading";
-import PageError from "../pages/PageError";
+import PageLoading from "../components/PageLoading";
+import PageError from "../components/PageError";
 import MiniLoader from "../components/MiniLoader";
 class Badges extends React.Component {
   constructor(props) {

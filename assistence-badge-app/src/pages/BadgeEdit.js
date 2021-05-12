@@ -4,7 +4,7 @@ import "./styles/BadgeEdit.css";
 import Badge from "../components/Badge";
 import BadgeForm from "../components/BadgeForm";
 import api from "../api";
-import PageLoading from "../pages/PageLoading"
+import PageLoading from "../components/PageLoading"
 class BadgeEdit extends React.Component {
   state = {
     loading : true,
