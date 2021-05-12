@@ -4,7 +4,17 @@ import confLog from "../images/girls.svg";
 import { Link } from "react-router-dom";
 import DeleteBadgeModal from "../components/DeleteBadgeModal";
 function BadgeDetails(props) {
+  //propio hook || custom hook
+  function useIncreaseCount(max) {
+    const [count, setCount] = React.useState(0);
+    if (count > max) {
+      setCount(0);
+    }
+    return [count, setCount];
+  }
   const badge = props.badge;
+  //const [state, setState] = React.useState(0)
+  const [count, setCount] = useIncreaseCount(4);
   return (
     <div>
       <div className="BadgeDetails__hero">
@@ -42,6 +52,15 @@ function BadgeDetails(props) {
           <div className="col">
             <h2> Actions </h2>
             <div>
+              <button
+                onClick={() => {
+                  setCount(count + 1);
+                }}
+                className="btn btn-primary mr-4"
+              >
+                {" "}
+                Increase count : {count}
+              </button>
               <Link
                 className="btn btn-primary mb-4"
                 to={`/badges/${badge.id}/edit`}
@@ -57,7 +76,7 @@ function BadgeDetails(props) {
               <DeleteBadgeModal
                 isOpen={props.modalIsOpen}
                 onClose={props.onCloseModal}
-                onDeleteBadge = {props.onDeleteBadge}
+                onDeleteBadge={props.onDeleteBadge}
               ></DeleteBadgeModal>
             </div>
           </div>

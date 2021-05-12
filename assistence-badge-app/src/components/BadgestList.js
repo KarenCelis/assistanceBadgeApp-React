@@ -2,7 +2,7 @@ import React from "react";
 import "./styles/BadgestList.css";
 import { Link } from "react-router-dom";
 import Gravatar from "./Gravatar";
-
+//los hooks solo funcionana dentro de componentes funcionales
 class BadgesListItem extends React.Component {
   render() {
     return (
